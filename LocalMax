@@ -5,12 +5,15 @@ namespace maximum
     {
         static void Main(string[] args)
         {
-            List <int> array = new List <int> { };
+            List<int> array = new List<int> { };
             Random random = new Random();
+            int lengthOfArray;
 
-            Console.Write("Массив: ");
+            Console.WriteLine("Введите желаемую длину массива: ");
+            lengthOfArray = int.Parse(Console.ReadLine());
+            Console.Write("\nМассив: ");
 
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < lengthOfArray; i++)
             {
                 array.Add(random.Next(101));
                 Console.Write(array[i] + " ");
@@ -23,15 +26,15 @@ namespace maximum
                 Console.Write(array[0] + " ");
             }
 
-            for (int i = 1; i < 29; i++)
+            for (int i = 1; i < lengthOfArray - 1; i++)
             {
-                if (array[i] > array[i-1] && array[i] > array[i+1])
+                if (array[i] > array[i - 1] && array[i] > array[i + 1])
                     Console.Write(array[i] + " ");
             }
 
-            if (array[29] > array[28])
+            if (array[lengthOfArray - 1] > array[lengthOfArray - 2])
             {
-                Console.Write(array[29]);
+                Console.Write(array[lengthOfArray - 1]);
             }
 
             Console.Read();
