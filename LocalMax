@@ -25,7 +25,7 @@ namespace maximum
                 
                 while (commandUser != "да" && commandUser != "нет")
                 {
-                    Console.WriteLine("\nВведите корректно команду? Да / Нет");
+                    Console.WriteLine("\nВведите корректно команду! Да / Нет");
                     commandUser = Console.ReadLine().ToLower();
                 }
 
