@@ -7,28 +7,16 @@ namespace maximum
         {
             List<int> array = new List<int> { };
             Random random = new Random();
-            string commandUser = " ";
+            int lengthOfArray;
 
-            while (commandUser != "нет")
+            Console.Write("Введите длину массива: ");
+            lengthOfArray = int.Parse(Console.ReadLine());
+            Console.Write("\nМассив: ");
+
+            for (int i = 0; i < lengthOfArray; i++)
             {
-                Console.Clear();
-                array.Add(random.Next(101));
-                Console.Write("Массив: ");
-
-                for (int i = 0; i < array.Count; i++)
-                {
-                    Console.Write(array[i] + " ");
-                }
-
-                Console.WriteLine("\n\nЖелаете продолжить заполнение массива?(Да / Нет)");
-                commandUser = Console.ReadLine().ToLower();
-                
-                while (commandUser != "да" && commandUser != "нет")
-                {
-                    Console.WriteLine("\nВведите корректно команду! Да / Нет");
-                    commandUser = Console.ReadLine().ToLower();
-                }
-
+                array.Add(random.Next(100));
+                Console.Write(array[i] + " ");
             }
 
             Console.Write("\n\nЛокальные максимумы: ");
