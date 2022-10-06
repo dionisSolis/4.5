@@ -7,34 +7,35 @@ namespace maximum
         {
             List<int> array = new List<int> { };
             Random random = new Random();
-            int lengthOfArray;
+            int lengthOfArrayToLocalMax;
 
-            Console.WriteLine("Введите желаемую длину массива: ");
-            lengthOfArray = int.Parse(Console.ReadLine());
-            Console.Write("\nМассив: ");
+            Console.Write("Массив: ");
 
-            for (int i = 0; i < lengthOfArray; i++)
+            for (int i = 0; i < 31; i++)
             {
                 array.Add(random.Next(101));
                 Console.Write(array[i] + " ");
             }
 
-            Console.Write("\n\nЛокальные максимумы: ");
+            Console.Write("\n\nВведите желаемую длину массива для нахождения локального максимума: ");
+            lengthOfArrayToLocalMax = int.Parse(Console.ReadLine());
+
+            Console.Write("\nЛокальные максимумы: ");
 
             if (array[0] > array[1])
             {
                 Console.Write(array[0] + " ");
             }
 
-            for (int i = 1; i < lengthOfArray - 1; i++)
+            for (int i = 1; i < lengthOfArrayToLocalMax - 1; i++)
             {
                 if (array[i] > array[i - 1] && array[i] > array[i + 1])
                     Console.Write(array[i] + " ");
             }
 
-            if (array[lengthOfArray - 1] > array[lengthOfArray - 2])
+            if (array[lengthOfArrayToLocalMax - 1] > array[lengthOfArrayToLocalMax - 2])
             {
-                Console.Write(array[lengthOfArray - 1]);
+                Console.Write(array[lengthOfArrayToLocalMax - 1]);
             }
 
             Console.Read();
